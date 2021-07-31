@@ -1,4 +1,4 @@
-COUNTRY,COUNTRY_CODE,YEAR,SUICIDE_RATE
+country,country_code,year,suicide_rate
 Australia,AUS,1990,13.4
 Australia,AUS,1991,13.7
 Australia,AUS,1992,13.3

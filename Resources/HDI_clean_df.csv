@@ -1,4 +1,4 @@
-HDI_RANK,COUNTRY,YEAR,VALUE
+hdi_rank,country,year,value
 169, Afghanistan,1991,0.307
 69, Albania,1991,0.631
 91, Algeria,1991,0.576
