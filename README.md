@@ -1,47 +1,92 @@
 # Project-2
 
-Project 2
+Combining the gross domestic product, human development index and suicide rates of countries from 1990 to 2019.
 
-Combining the gross domestic product, human development index and suicide rates of *countries* from 1990 to 2019
+# Extract -- Sources of Data (Raw Data Folder)
 
-# Sources of Data (Raw Data Folder)
+All the data was in .csv format and was extracted by downloading directly from the source. The data was uploaded using pandas to jupyter notebook.
 
-## GDP 
-Source: Organisation for Economic Co-operation and Development (OECD) 
-Link: https://data.oecd.org/gdp/gross-domestic-product-gdp.htm
-File Name: GDP_capita.csv
+  ### GDP 
+  Source: Organisation for Economic Co-operation and Development (OECD) 
 
-## Human Development Index
-Source: United Nations Development Program
-Link:http://hdr.undp.org/en/indicators/137506
-File Name: Human Development Index (HDI).csv
+  Link: https://data.oecd.org/gdp/gross-domestic-product-gdp.htm
 
-## Suicide Rates
-Source: Organisation for Economic Co-operation and Development (OECD) 
-Link: https://data.oecd.org/healthstat/suicide-rates.htm
-File Name: suicide_rates.csv
+  File Name: GDP_capita.csv
 
-## Jupyter Notebooks (Code Folder
-GDP_data_elt: this notebook works on tranforming the GDP/Capita file, and exporting the cleaned file to the Resources folder.
-Transform_HDI: this notebook works on tranforming the HDI file, and exporting the cleaned file to the Resources folder.
-suicide_by_country: this notebook works on tranforming the suicide rates file, and exporting the cleaned file to the Resources folder. 
-SQL_Schema: this notebook loads the cleand data from the resources folder and creates a data base connection to load the data into the appropriate tables.
-Create_Database: this notebook creates the table needed for the database connection
+  ### Human Development Index
+  Source: United Nations Development Program
 
-Final Production Database: 
-Postgres Relational SQL Based Database
+  Link:http://hdr.undp.org/en/indicators/137506
 
-√ Extract: indicates the original data sources and how the data were formatted at a professional level
+  File Name: Human Development Index (HDI).csv
 
-√ Transform: explains what data clearing or transformation was required at a professional level
+  ### Suicide Rates
+  Source: Organisation for Economic Co-operation and Development (OECD) 
 
-√ Load: explains the final database, tables/collections, and why the topic was chosen at a professional level
+  Link: https://data.oecd.org/healthstat/suicide-rates.htm
+
+  File Name: suicide_rates.csv
 
 
+# Transform
 
-√ Successfully uploaded to GitHub; demonstrating professional quality of presentation
+## Jupyter Notebooks (Code Folder)
+**GDP_data_elt:** this notebook works on tranforming the GDP/Capita file, and exporting the cleaned file to the Resources folder.
 
-√ GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use
+**Transform_HDI:** this notebook works on tranforming the HDI file, and exporting the cleaned file to the Resources folder.
 
-√ The README is customized to a professional level
+**suicide_by_country:** this notebook works on tranforming the suicide rates file, and exporting the cleaned file to the Resources folder.
+
+**SQL_Schema:** this notebook loads the cleand data from the resources folder and creates a data base connection to load the data into the appropriate tables.
+
+**Create_Database:** this notebook creates the table needed for the database connection
+
+## Data Clearing/Transformation
+
+### HDI Data
+The HDI data had a different data source from the suicide rates and GDP data, therefore, steps were needed to bring it to a similar format as the other two sources. 
+
+The following are some of the key steps taken to make this data set ready to use:
+
+    -The file code code not be decoded by the UTF-8 format and needed to apply 'unicode_escape' to load the file appropriately
+    -Remove columns with NaN Values (every alternate column was NaN), delete unecessary rows, and other NaN values
+    -The column names were the Year and the the data was in a 'pivot' format, used the melt function to transform the columns to be included as row values
+    -The naming convention countries in the data base was different from the other databases. Efforts were made to identify those discrepancy and replace the values in the HDI data set.
+
+### GDP & Suicide
+    -Selecting relevant columns from the “GDP” and “Suicide” dataset, such as location code, year, and value and saving them in to new datasets
+    -Renaming columns in the new datasets
+    -Renaming columns in “country datasets”
+    -Merging new “GDP” and “Suicide”  datasets with “country” dataset on “Location code” to add a full country name to “GDP” and “Suicide”   datasets
+    -Removing any missing (NaN) values from “GDP” and “Suicide”  datasets
+    -Saving the outputs  to csv files .
+
+# Load 
+
+## Final Production Database in Postgres: 
+
+### Gross Domestic Product:
+
+Definition: Gross domestic product (GDP) is the standard measure of the value added created through the production of goods and services in a country during a certain period.
+Measured as USD per Capita
+
+**Columns:** Country, Year, GDP/Capita
+
+### Human Development Index:
+
+Definition: A composite index measuring average achievement in three basic dimensions of human development—a long and healthy life, knowledge and a decent standard of living.
+Suicide
+
+**Columns:** HDI Rank, Country, Year, Value
+
+### Suicide Rates:
+Definition: Suicide rates are defined as the deaths deliberately initiated and performed by a person in the full knowledge or expectation of its fatal outcome.
+Measured per 100,000 persons.
+
+**Columns:** Country, Year, Country Code, Suicide Rate
+
+### Project Motivation
+
+To analyze a country's suicide rate as comapred to the gross domestic product and human development.
+
 
