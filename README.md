@@ -37,9 +37,7 @@ All the data was in .csv format and was extracted by downloading directly from t
 
 **suicide_by_country:** this notebook works on tranforming the suicide rates file, and exporting the cleaned file to the Resources folder.
 
-**SQL_Schema:** this notebook loads the cleand data from the resources folder and creates a data base connection to load the data into the appropriate tables.
-
-**Create_Database:** this notebook creates the table needed for the database connection
+**Create_Database:** this notebook creates a Postgres connection to create the database(suicide_db), the tables needed (hdi,gdp,suicide), loads the cleand data from the resources folder and load the data into the appropriate tables.
 
 ## Data Clearing/Transformation
 
@@ -48,10 +46,10 @@ The HDI data had a different data source from the suicide rates and GDP data, th
 
 The following are some of the key steps taken to make this data set ready to use:
 
-    -The file code code not be decoded by the UTF-8 format and needed to apply 'unicode_escape' to load the file appropriately
+    -The file code could not be decoded by the UTF-8 format and needed to apply 'unicode_escape' to load the file appropriately
     -Remove columns with NaN Values (every alternate column was NaN), delete unecessary rows, and other NaN values
     -The column names were the Year and the the data was in a 'pivot' format, used the melt function to transform the columns to be included as row values
-    -The naming convention countries in the data base was different from the other databases. Efforts were made to identify those discrepancy and replace the values in the HDI data set.
+    -The naming convention countries in the data base was different from the other databases. Efforts were made to identify those discrepancy and replace the values in the HDI data set using the HDI_countries_CD.csv file in Raw Data.
 
 ### GDP & Suicide
     -Selecting relevant columns from the “GDP” and “Suicide” dataset, such as location code, year, and value and saving them in to new datasets
@@ -70,20 +68,19 @@ The following are some of the key steps taken to make this data set ready to use
 Definition: Gross domestic product (GDP) is the standard measure of the value added created through the production of goods and services in a country during a certain period.
 Measured as USD per Capita
 
-**Columns:** Country, Year, GDP/Capita
+**Columns:** country, year, gdp_per_capita
 
 ### Human Development Index:
 
 Definition: A composite index measuring average achievement in three basic dimensions of human development—a long and healthy life, knowledge and a decent standard of living.
-Suicide
 
-**Columns:** HDI Rank, Country, Year, Value
+**Columns:** hdi_rank, country, year, value
 
 ### Suicide Rates:
 Definition: Suicide rates are defined as the deaths deliberately initiated and performed by a person in the full knowledge or expectation of its fatal outcome.
 Measured per 100,000 persons.
 
-**Columns:** Country, Year, Country Code, Suicide Rate
+**Columns:** country, year, country_code, suicide_rate
 
 ### Project Motivation
 
