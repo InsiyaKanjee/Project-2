@@ -84,7 +84,9 @@ Measured per 100,000 persons.
 
 ### Project Motivation
 
-To analyze a country's suicide rate as comapred to the gross domestic product and human development.
+Globally, close to 800,000 people die from suicide every year. That’s one person every 40 seconds. Due to the stigma associated with suicide – and the fact that it is illegal in some countries – this figure is also likely to be an underestimate, with some suicides being classified as unintentional injuries. This makes it one of the leading causes of death globally. Around twice as many die from suicide as from homicide. Suicide is more common than homicide across most countries in the world – often as much as ten to twenty times higher. [source](https://ourworldindata.org/suicide)
+
+With this data we would like to analyze a country's suicide rate as comapred to the gross domestic product and human development.
 
 ### Sample Questions that can be answered post ETL:
 
