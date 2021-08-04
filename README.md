@@ -86,6 +86,16 @@ Measured per 100,000 persons.
 
 To analyze a country's suicide rate as comapred to the gross domestic product and human development.
 
+### Sample Questions that can be answered post ETL:
+
+1. Top 10 suicide rates by country (using suicide table: using country and suicide_rate columns)
+2. Avg suicide rate of the world (using suicide table: using country and suicide_rate columns)
+3. suicide rates for the 10 countries with lowest gdp (using suicide & gdp tables: using country, suicide_rate, gdp columns)
+4. suicide rates for the 10 countries with the highest gdp (using suicide & gdp tables: using country, suicide_rate, gdp columns)
+5. suicide rates for the 10 countries with the lowest HDI (using suicide & hdi tables: using country, suicide_rate, hdi columns)
+6. suicide rates for the 10 countries with the highest HDI (using suicide & hdi tables: using country, suicide_rate, hdi columns)
+
+
 ### ERD Diagram
 
 ![ERD Diagram](./ERD.PNG)
