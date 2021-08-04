@@ -89,4 +89,8 @@ Measured per 100,000 persons.
 
 To analyze a country's suicide rate as comapred to the gross domestic product and human development.
 
+### ERD Diagram
+
+![ERD Diagram](./ERD.PNG)
+
 
