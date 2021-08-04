@@ -101,3 +101,4 @@ To analyze a country's suicide rate as comapred to the gross domestic product an
 ![ERD Diagram](./ERD.PNG)
 
 
+**Group Members: Andriy, Insiya, Scott**
